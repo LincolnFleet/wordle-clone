@@ -3,7 +3,7 @@ import "./Footer.css";
 
 function Footer(props: object): JSX.Element {
 	return (
-		<footer>
+		<footer data-testid="footer">
 			<div>~~~footer~~~</div>
 		</footer>
 	);
