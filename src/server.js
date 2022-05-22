@@ -1,5 +1,4 @@
-import Express from "express";
-import { Router } from "express";
+import Express, { Router } from "express";
 
 const APP = Express();
 const ROUTER = Router();
