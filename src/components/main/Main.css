@@ -1,5 +1,6 @@
 main {
 	grid-area: m;
+
 	display: flex;
 	flex-flow: row wrap;
 }

@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 import Header from "./Header";
 
 test("renders <Header />", () => {
-	render(<Header />);
+	render(<Header setLayoutClass={() => "default"} />);
 	const headerElem = screen.getByTestId("header");
 	expect(headerElem).toBeInTheDocument();
 });
