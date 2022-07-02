@@ -15,4 +15,10 @@
 FROM node:18.2.0
 WORKDIR /app
 USER node
+
 ENV WDS_SOCKET_PORT=0
+ENV PORT=3000
+
+EXPOSE ${PORT}
+
+CMD ["npm", "run", "start:dev"]
