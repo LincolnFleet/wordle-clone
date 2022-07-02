@@ -1,12 +1,12 @@
 import React from "react";
-import "./Main.css";
+import "./main.css";
+// import types
+import { Props } from "../../modules/definitions"
 
-function Main(props: object): JSX.Element {
+export default function Main(props: Props): JSX.Element {
 	return (
 		<main data-testid="main">
 			<div>~~~main~~~</div>
 		</main>
 	);
 }
-
-export default Main;

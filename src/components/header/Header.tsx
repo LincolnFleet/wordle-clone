@@ -1,13 +1,19 @@
 import React from "react";
-import "./Header.css";
-import logo from "../../logo.svg";
+import "./header.css";
+// import types
+import { Props } from "../../modules/definitions"
 
-function Header(props: object): JSX.Element {
+interface localProps extends Props {
+	setLayoutClass: Function;
+}
+
+export default function Header({ setLayoutClass }: localProps): JSX.Element {
 	return (
 		<header data-testid="header">
-			<img src={logo} className="Header logo" alt="logo" />
+			~~~Header~~~
+			<button onClick={()=>{}}>
+				Change Layout
+			</button>
 		</header>
 	);
 }
-
-export default Header;
