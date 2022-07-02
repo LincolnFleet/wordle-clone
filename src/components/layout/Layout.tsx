@@ -1,12 +1,12 @@
 import React from "react";
 import "./layout.css";
+// import types
+import { Props } from "../../modules/definitions"
 
-interface Props {
-	children: JSX.Element[];
+interface localProps extends Props { layoutClass: String };
+
+export default function Layout({ children, layoutClass = "default" }: localProps): JSX.Element {
+	return <div className={ "layout " + layoutClass }>{ children }</div>;
 }
 
-function LayoutDefault({ children }: Props): JSX.Element {
-	return <div className="layout default">{children}</div>;
-}
-
-export default LayoutDefault;
+// export default Layout;

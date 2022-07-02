@@ -6,16 +6,16 @@ import Header from "../header/Header";
 import Main from "../main/Main";
 import Footer from "../footer/Footer";
 
-function App(): JSX.Element {
+export default function App(): JSX.Element {
+	const [layoutClass, setLayoutClass] = React.useState("default");
+
 	return (
-		<div className="app">
-			<Layout>
-				<Header />
+		<div data-testid="app" className="app">
+			<Layout layoutClass={layoutClass}>
+				<Header setLayoutClass={setLayoutClass} />
 				<Main />
 				<Footer />
 			</Layout>
 		</div>
 	);
 }
-
-export default App;
