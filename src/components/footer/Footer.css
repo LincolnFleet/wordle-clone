@@ -1,0 +1,6 @@
+footer {
+	grid-area: f;
+
+	display: flex;
+	flex-flow: row nowrap;
+}

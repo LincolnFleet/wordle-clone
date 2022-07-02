@@ -1,7 +1,11 @@
 import React from "react";
-import "./Footer.css";
+import "./footer.css";
 
-function Footer(props: object): JSX.Element {
+interface Props {
+	children?: JSX.Element[];
+}
+
+function Footer(props: Props): JSX.Element {
 	return (
 		<footer data-testid="footer">
 			<div>~~~footer~~~</div>

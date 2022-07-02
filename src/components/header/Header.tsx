@@ -1,13 +1,12 @@
 import React from "react";
-import "./Header.css";
-import logo from "../../logo.svg";
+import "./header.css";
 
-function Header(props: object): JSX.Element {
-	return (
-		<header data-testid="header">
-			<img src={logo} className="Header logo" alt="logo" />
-		</header>
-	);
+interface Props {
+	children?: JSX.Element[];
+}
+
+function Header(props: Props): JSX.Element {
+	return <header data-testid="header">~~~Header~~~</header>;
 }
 
 export default Header;
