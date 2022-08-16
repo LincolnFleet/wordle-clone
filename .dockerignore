@@ -1,0 +1,3 @@
+# Files matching the following path patterns will not be included in build image
+*/temp*
+*/node_modules*
