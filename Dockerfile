@@ -1,4 +1,4 @@
-# docker run --rm -it -v "$(pwd)":/app -p "3000:3000" wordle-clone:latest bash
+# docker build -t wordle-clone .
 
 # docker run \
 # --name wordle-clone \
@@ -9,8 +9,6 @@
 # --publish "3000:3000" \
 # wordle-clone:latest \
 # bash
-
-# docker build -t wordle-clone .
 
 FROM node:18.2.0
 WORKDIR /app
