@@ -1,9 +1,10 @@
 import React from "react";
 import "./main.css";
-// import types
-import { Props } from "../../modules/definitions";
+import { Props } from "../../definitions/types";
 
-const Main: React.FC = (props: Props) => {
+interface MainContentProps extends Props {}
+
+const Main: React.FC<MainContentProps> = (props: MainContentProps) => {
 	return (
 		<main data-testid="main">
 			<div>~~~main~~~</div>

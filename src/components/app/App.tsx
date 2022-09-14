@@ -1,12 +1,15 @@
 import React from "react";
 import "./app.css";
+import { Props } from "../../definitions/types";
 
 import Layout from "../layout/Layout";
 import Header from "../header/Header";
-import Main from "../main/Main";
+import Main from "../main_content/Main";
 import Footer from "../footer/Footer";
 
-export default function App(): JSX.Element {
+interface AppProps extends Props {}
+
+const App: React.FC<AppProps> = (props: AppProps) => {
 	const [layoutClass, setLayoutClass] = React.useState("default");
 
 	return (
@@ -18,4 +21,6 @@ export default function App(): JSX.Element {
 			</Layout>
 		</div>
 	);
-}
+};
+
+export default App;

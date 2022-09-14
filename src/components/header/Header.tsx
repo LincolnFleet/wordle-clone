@@ -1,19 +1,17 @@
 import React from "react";
 import "./header.css";
-// import types
-import { Props } from "../../modules/definitions"
 
-interface localProps extends Props {
+interface HeaderProps {
 	setLayoutClass: Function;
 }
 
-export default function Header({ setLayoutClass }: localProps): JSX.Element {
+const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
 	return (
 		<header data-testid="header">
 			~~~Header~~~
-			<button onClick={()=>{}}>
-				Change Layout
-			</button>
+			<button onClick={() => {}}>Change Layout</button>
 		</header>
 	);
-}
+};
+
+export default Header;
