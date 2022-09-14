@@ -5,6 +5,6 @@ import Header from "./Header";
 
 test("renders <Header />", () => {
 	render(<Header setLayoutClass={() => "default"} />);
-	const headerElem = screen.getByTestId("header");
+	const headerElem = screen.getByTestId("Header");
 	expect(headerElem).toBeInTheDocument();
 });

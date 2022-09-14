@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./app.css";
 import { Props } from "../../definitions/types";
 
 import Layout from "../layout/Layout";
@@ -13,7 +13,7 @@ const App: React.FC<AppProps> = (props: AppProps) => {
 	const [layoutClass, setLayoutClass] = React.useState("default");
 
 	return (
-		<div data-testid="app" className="app">
+		<div data-testid="App" className="app">
 			<Layout layoutClass={layoutClass}>
 				<Header setLayoutClass={setLayoutClass} />
 				<Content />

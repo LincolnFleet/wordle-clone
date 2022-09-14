@@ -7,7 +7,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
 	return (
-		<header data-testid="header">
+		<header data-testid="Header">
 			~~~Header~~~
 			<button onClick={() => {}}>Change Layout</button>
 		</header>

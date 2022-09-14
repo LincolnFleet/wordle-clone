@@ -5,6 +5,6 @@ import App from "./App";
 
 test("renders <App/>", () => {
 	render(<App />);
-	const linkElement = screen.getByTestId("app");
+	const linkElement = screen.getByTestId("App");
 	expect(linkElement).toBeInTheDocument();
 });

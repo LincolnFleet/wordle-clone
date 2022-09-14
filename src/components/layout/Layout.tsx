@@ -1,5 +1,5 @@
 import React from "react";
-import "./Layout.css";
+import "./layout.css";
 import { Props } from "../../definitions/types";
 
 interface LayoutProps extends Props {
