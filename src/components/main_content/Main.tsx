@@ -1,12 +1,14 @@
 import React from "react";
 import "./main.css";
 // import types
-import { Props } from "../../modules/definitions"
+import { Props } from "../../modules/definitions";
 
-export default function Main(props: Props): JSX.Element {
+const Main: React.FC = (props: Props) => {
 	return (
 		<main data-testid="main">
 			<div>~~~main~~~</div>
 		</main>
 	);
-}
+};
+
+export default Main;
