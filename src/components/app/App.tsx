@@ -1,10 +1,10 @@
 import React from "react";
-import "./app.css";
+import "./App.css";
 import { Props } from "../../definitions/types";
 
 import Layout from "../layout/Layout";
 import Header from "../header/Header";
-import Main from "../main_content/Main";
+import Content from "../content/Content";
 import Footer from "../footer/Footer";
 
 interface AppProps extends Props {}
@@ -16,7 +16,7 @@ const App: React.FC<AppProps> = (props: AppProps) => {
 		<div data-testid="app" className="app">
 			<Layout layoutClass={layoutClass}>
 				<Header setLayoutClass={setLayoutClass} />
-				<Main />
+				<Content />
 				<Footer />
 			</Layout>
 		</div>

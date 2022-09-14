@@ -1,7 +1,8 @@
 import React from "react";
-import "./footer.css";
+import "./Footer.css";
+import { Props } from "../../definitions/types";
 
-interface FooterProps {}
+interface FooterProps extends Props {}
 
 const Footer: React.FC<FooterProps> = (props: FooterProps) => {
 	return (
