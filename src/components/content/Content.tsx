@@ -1,13 +1,34 @@
-import React from "react";
+import { FC, ReactElement, useState, useEffect, useMemo } from "react";
 import "./content.css";
-import { Props } from "../../definitions/types";
+import { Props, Dimensions } from "../../definitions/types";
 
-interface ContentProps extends Props {}
+interface ContentProps extends Props {
+	target: String;
+	attempts: Number;
+}
 
-const Content: React.FC<ContentProps> = (props: ContentProps) => {
+function makeRowsAndCols({ rows, cols }: Dimensions, guesses: String[]): ReactElement[][] {
+	return Array.from({ length: rows }).map((row, idxY) =>
+		Array.from({ length: cols }).map((cell, idxX) => (
+			<div className={["cell", idxY, idxX].join(" ")}>{guesses[idxY][idxX] || ""}</div>
+		))
+	);
+}
+
+const Content: FC<ContentProps> = ({ target, attempts }: ContentProps) => {
+	const [guesses, setGuesses]: [String[], Function] = useState([""]);
+	const targetClean: String = useMemo(() => target.trim(), [target]);
+
+	// init, unmount
+	useEffect(() => {}, []);
+
+	// make data graph and fill with html cells
+	const rowsAndCols = makeRowsAndCols({ rows: attempts, cols: targetClean.length }, guesses);
+
 	return (
 		<main data-testid="Content">
-			<div>~~~Content~~~</div>
+			<div className="toolbar">"~~~Toolbar~~~"</div>
+			<div className="grid">{rowsAndCols}</div>
 		</main>
 	);
 };
