@@ -14,7 +14,7 @@ export interface Coordinates {
 };
 
 export interface Dimensions {
-	rows: number;
-	cols: number;
-	depth?: number;
+	rowCount: number;
+	colCount: number;
+	depthCount?: number;
 }

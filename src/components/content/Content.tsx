@@ -7,12 +7,16 @@ interface ContentProps extends Props {
 	attempts: number;
 }
 
-function makeRowsAndCols({ rows, cols }: Dimensions, guesses: string[]): ReactElement[][] {
-	return Array.from({ length: rows }).map((row, idxY) =>
-		Array.from({ length: cols }).map((cell, idxX) => (
-			<div className={["cell", idxY, idxX].join(" ")}>{guesses[idxY][idxX] || ""}</div>
-		))
+function makeGraph(
+	{ rowCount, colCount }: Dimensions,
+	guesses: string[],
+	defaultChar: string = ""
+): string[][] {
+	const graph = Array.from({ length: rowCount }, () =>
+		Array.from({ length: colCount }, () => "")
 	);
+
+	return graph.map((rows, idxY) => rows.map((cell, idxX) => graph[idxY][idxX] || defaultChar));
 }
 
 const Content: FC<ContentProps> = ({ target, attempts }: ContentProps) => {
@@ -23,12 +27,25 @@ const Content: FC<ContentProps> = ({ target, attempts }: ContentProps) => {
 	useEffect(() => {}, []);
 
 	// make data graph and fill with html cells
-	const rowsAndCols = makeRowsAndCols({ rows: attempts, cols: targetClean.length }, guesses);
+	const charGraph = useMemo(
+		() => makeGraph({ rowCount: attempts, colCount: targetClean.length }, guesses),
+		[targetClean, attempts, guesses]
+	);
+
+	console.log({ charGraph });
 
 	return (
 		<main data-testid="Content">
-			<div className="toolbar">"~~~Toolbar~~~"</div>
-			<div className="grid">{rowsAndCols}</div>
+			<div className="toolbar">~~~Toolbar~~~</div>
+			<div className="grid">
+				{charGraph.map((row) => (
+					<div className="row">
+						{row.map((char) => (
+							<div className="cell">{char}</div>
+						))}
+					</div>
+				))}
+			</div>
 		</main>
 	);
 };
