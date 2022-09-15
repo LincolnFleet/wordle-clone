@@ -16,5 +16,5 @@ export interface Coordinates {
 export interface Dimensions {
 	rows: number;
 	cols: number;
-	depth: number;
+	depth?: number;
 }
