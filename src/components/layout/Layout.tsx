@@ -3,7 +3,7 @@ import "./layout.css";
 import { Props } from "../../definitions/types";
 
 interface LayoutProps extends Props {
-	layoutClass: String;
+	layoutClass: string;
 }
 
 const Layout: React.FC<LayoutProps> = ({ layoutClass, children }: LayoutProps) => {

@@ -1,4 +1,5 @@
 import React from "react";
+import { noop } from "../../definitions/types";
 import "./header.css";
 
 interface HeaderProps {
@@ -9,7 +10,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
 	return (
 		<header data-testid="Header">
 			~~~Header~~~
-			<button onClick={() => {}}>Change Layout</button>
+			<button onClick={noop}>Change Layout</button>
 		</header>
 	);
 };

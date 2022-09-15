@@ -3,11 +3,11 @@ import "./content.css";
 import { Props, Dimensions } from "../../definitions/types";
 
 interface ContentProps extends Props {
-	target: String;
-	attempts: Number;
+	target: string;
+	attempts: number;
 }
 
-function makeRowsAndCols({ rows, cols }: Dimensions, guesses: String[]): ReactElement[][] {
+function makeRowsAndCols({ rows, cols }: Dimensions, guesses: string[]): ReactElement[][] {
 	return Array.from({ length: rows }).map((row, idxY) =>
 		Array.from({ length: cols }).map((cell, idxX) => (
 			<div className={["cell", idxY, idxX].join(" ")}>{guesses[idxY][idxX] || ""}</div>
@@ -16,8 +16,8 @@ function makeRowsAndCols({ rows, cols }: Dimensions, guesses: String[]): ReactEl
 }
 
 const Content: FC<ContentProps> = ({ target, attempts }: ContentProps) => {
-	const [guesses, setGuesses]: [String[], Function] = useState([""]);
-	const targetClean: String = useMemo(() => target.trim(), [target]);
+	const [guesses, setGuesses]: [string[], Function] = useState([""]);
+	const targetClean: string = useMemo(() => target.trim(), [target]);
 
 	// init, unmount
 	useEffect(() => {}, []);

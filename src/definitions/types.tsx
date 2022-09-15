@@ -7,14 +7,14 @@ export interface Props {
 }
 
 export interface Coordinates { 
-	x: Number;
-	y: Number;
-	z?: Number;
-	h?: Number;
+	x: number;
+	y: number;
+	z?: number;
+	h?: number;
 };
 
 export interface Dimensions {
-	rows: Number;
-	cols: Number;
-	depth: Number;
+	rows: number;
+	cols: number;
+	depth: number;
 }
