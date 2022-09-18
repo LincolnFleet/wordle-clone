@@ -6,7 +6,7 @@ interface LayoutProps extends Props {
 	layoutClass: string;
 }
 
-const Layout: React.FC<LayoutProps> = ({ layoutClass, children }: LayoutProps) => {
+function Layout({ layoutClass, children }: LayoutProps): JSX.Element {
 	return <div className={"layout " + layoutClass}>{children}</div>;
 };
 

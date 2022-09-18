@@ -6,7 +6,7 @@ interface HeaderProps {
 	setLayoutClass: Function;
 }
 
-const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
+function Header(props: HeaderProps): JSX.Element {
 	return (
 		<header data-testid="Header">
 			~~~Header~~~

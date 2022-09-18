@@ -9,17 +9,17 @@ import Footer from "../footer/Footer";
 
 interface AppProps extends Props {}
 
-const devData = { attempts: 5, target: "Readable" };
+const devData = { attempts: 5, secretWord: "Readable" };
 
-const App: React.FC<AppProps> = (props: AppProps) => {
+function App(props: AppProps): JSX.Element {
 	const [layoutClass, setLayoutClass] = React.useState("default");
-	const { attempts, target } = devData;
+	const { attempts, secretWord } = devData;
 
 	return (
 		<div data-testid="App" className="app">
 			<Layout layoutClass={layoutClass}>
 				<Header setLayoutClass={setLayoutClass} />
-				<Content attempts={attempts} target={target} />
+				<Content attempts={attempts} secretWord={secretWord} />
 				<Footer />
 			</Layout>
 		</div>

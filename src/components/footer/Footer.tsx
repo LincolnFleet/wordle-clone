@@ -4,7 +4,7 @@ import { Props } from "../../definitions/types";
 
 interface FooterProps extends Props {}
 
-const Footer: React.FC<FooterProps> = (props: FooterProps) => {
+function Footer(props: FooterProps): JSX.Element {
 	return (
 		<footer data-testid="Footer">
 			<div>~~~footer~~~</div>
