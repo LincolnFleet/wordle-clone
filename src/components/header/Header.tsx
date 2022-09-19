@@ -1,5 +1,5 @@
 import React from "react";
-import { noop } from "../../definitions/types";
+import { noop } from "../../definitions/modules";
 import "./header.css";
 
 interface HeaderProps {
