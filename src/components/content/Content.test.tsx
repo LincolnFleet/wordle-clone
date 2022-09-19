@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
-
 import Content from "./Content";
-const D = { attempts: 5, target: "Readable" };
+
+const devData = { attempts: 5, secretWord: "Readable" };
 
 test("renders <Content />", () => {
-	render(<Content attempts={D.attempts} target={D.target} />);
-	const contentElem = screen.getByTestId("Content");
-	expect(contentElem).toBeInTheDocument();
+	render(<Content {...devData} />);
+	const lmnt = screen.getByTestId("Content");
+	expect(lmnt).toBeInTheDocument();
 });
