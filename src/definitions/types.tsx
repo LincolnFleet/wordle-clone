@@ -1,9 +1,7 @@
 import { ReactNode } from "react";
 
-export function noop(): void {}
-
 export interface Props {
-	children?: ReactNode;
+	children?: ReactNode | ReactNode[];
 	style?: React.CSSProperties;
 }
 
@@ -18,4 +16,10 @@ export interface Dimensions {
 	rowCount: number;
 	colCount: number;
 	depthCount?: number;
+}
+
+export interface ReducerAction {
+	type: string;
+	data: { [index: string]: any };
+	pipe?: Function | Function[];
 }
