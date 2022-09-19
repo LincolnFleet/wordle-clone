@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./app.css";
 import { Props } from "../../definitions/types";
 
@@ -9,11 +9,18 @@ import Footer from "../footer/Footer";
 
 interface AppProps extends Props {}
 
-const devData = { attempts: 5, secretWord: "Readable" };
+const devData = { attempts: 5, secretWord: "SoSeakrit" };
 
 function App(props: AppProps): JSX.Element {
-	const [layoutClass, setLayoutClass] = React.useState("default");
-	const { attempts, secretWord } = devData;
+	const [layoutClass, setLayoutClass] = useState("default");
+	const [secretWord, setSecretWord] = useState("");
+	const [attempts, setAttempts] = useState(6);
+
+	// Runs: once on init; componentDidMount; getDerivedStateFromProps
+	useEffect(() => {
+		setSecretWord(devData.secretWord);
+		setAttempts(devData.attempts);
+	}, []);
 
 	return (
 		<div data-testid="App" className="app">
@@ -24,6 +31,6 @@ function App(props: AppProps): JSX.Element {
 			</Layout>
 		</div>
 	);
-};
+}
 
 export default App;
