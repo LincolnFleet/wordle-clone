@@ -4,5 +4,5 @@ import { Props } from "../../definitions/types";
 interface ComponentProps extends Props {}
 
 export default function (props: ComponentProps): ReactNode {
-	return <></>;
+	return <div className="Component" data-testid="Component" />;
 }
