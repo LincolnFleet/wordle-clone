@@ -1,12 +1,10 @@
-import React from "react";
 import { ReducerAction } from "../../definitions/types";
-import { pipe as execPipe } from "../../definitions/modules";
 
 export const CELL_SET = "CELL_SET";
 export const CELL_UNSET = "CELL_UNSET";
 
 export function charGraphReducer(state: readonly string[][], action: ReducerAction) {
-	const { type, data, pipe } = action;
+	const { type, data } = action;
 	let newState = [...state];
 
 	const {
@@ -19,7 +17,7 @@ export function charGraphReducer(state: readonly string[][], action: ReducerActi
 			if (!newState[y][x]) {
 				newState[y][x] = value;
 			} else {
-				console.error(`Attempted to fill occupied cell with CELL_SET data: \n`{data}`);
+				console.error(`Attempted to fill occupied cell with CELL_SET data: \n${data}`);
 			}
 			return newState;
 

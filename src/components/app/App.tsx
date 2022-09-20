@@ -4,7 +4,7 @@ import { Props } from "../../definitions/types";
 
 import Layout from "../layout/Layout";
 import Header from "../header/Header";
-import Content from "../content/Content";
+import Game from "../content/Game";
 import Footer from "../footer/Footer";
 
 interface AppProps extends Props {}
@@ -26,7 +26,7 @@ function App(props: AppProps): JSX.Element {
 		<div data-testid="App" className="app">
 			<Layout layoutClass={layoutClass}>
 				<Header setLayoutClass={setLayoutClass} />
-				<Content attempts={attempts} secretWord={secretWord} />
+				<Game attempts={attempts} secretWord={secretWord} />
 				<Footer />
 			</Layout>
 		</div>
