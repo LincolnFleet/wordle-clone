@@ -4,15 +4,15 @@
 	height: 100%;
 	grid-template-areas: 
 	"h h h h h h h h h h h"
-	". m m m m m m m m m ."
-	". m m m m m m m m m ."
-	". m m m m m m m m m ."
-	". m m m m m m m m m ."
-	". m m m m m m m m m ."
-	". m m m m m m m m m ."
-	". m m m m m m m m m ."
-	". m m m m m m m m m ."
-	". m m m m m m m m m ."
-	". m m m m m m m m m ."
+	". . . . . . . . . . ."
+	". m m m m m m m t t ."
+	". m m m m m m m t t ."
+	". m m m m m m m t t ."
+	". m m m m m m m t t ."
+	". m m m m m m m t t ."
+	". m m m m m m m t t ."
+	". m m m m m m m t t ."
+	". . . . . . . . . . ."
+	". . . . . . . . . . ."
 	"f f f f f f f f f f f";
 }

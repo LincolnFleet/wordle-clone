@@ -3,4 +3,6 @@ footer {
 
 	display: flex;
 	flex-flow: row nowrap;
+
+	background-color: black;
 }

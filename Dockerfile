@@ -1,4 +1,4 @@
-# docker run --rm -it -v "$(pwd)":/app -p "3000:3000" wordle-clone:latest bash
+# docker build -t wordle-clone .
 
 # docker run \
 # --name wordle-clone \
@@ -10,9 +10,14 @@
 # wordle-clone:latest \
 # bash
 
-# docker build -t wordle-clone .
-
+# base image for env
 FROM node:18.2.0
+
+# change to new dir in env
 WORKDIR /app
+
+# change linux user to node, from root
 USER node
+
+# create var for socket port bridging
 ENV WDS_SOCKET_PORT=0

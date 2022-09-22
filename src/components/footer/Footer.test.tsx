@@ -1,10 +1,10 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-
 import Footer from "./Footer";
 
+const testProps = {};
+
 test("renders <Footer />", () => {
-	render(<Footer />);
-	const footerElem = screen.getByTestId("footer");
-	expect(footerElem).toBeInTheDocument();
+	render(<Footer {...testProps} />);
+	const lmnt = screen.getByTestId("Footer");
+	expect(lmnt).toBeInTheDocument();
 });

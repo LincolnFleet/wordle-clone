@@ -1,12 +1,15 @@
 import React from "react";
 import "./footer.css";
-// import types
-import { Props } from "../../modules/definitions";
+import { Props } from "../../definitions/types";
 
-export default function Footer(props: Props): JSX.Element {
+interface FooterProps extends Props {}
+
+function Footer(props: FooterProps): JSX.Element {
 	return (
-		<footer data-testid="footer">
+		<footer data-testid="Footer">
 			<div>~~~footer~~~</div>
 		</footer>
 	);
-}
+};
+
+export default Footer;

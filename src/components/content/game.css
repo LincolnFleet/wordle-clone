@@ -1,0 +1,43 @@
+main {
+	width: 100%;
+	height: 100%;
+	grid-area: m;
+	display: flex;
+}
+
+.toolbar {
+	display: flex;
+	min-width: 15%;
+	grid-area: t;
+}
+
+.grid {
+	display: grid;
+	position: relative;
+	min-width: 66%;
+	grid-template: auto auto 1fr;
+	gap: 0.3em;
+}
+
+.row {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 0.3em;
+}
+
+.cell {
+	border-radius: 33%;
+	width: 90%;
+	height: 90%;
+	transition: 
+	width 0.2s ease-in-out,
+	height 0.2s ease-in-out,
+	color 0.1s ease;
+	background-color: lightsalmon;
+}
+
+.cell:focus {
+	width: 100%;
+	height: 100%;
+	background-color: orange;
+}
