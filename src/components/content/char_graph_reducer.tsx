@@ -5,13 +5,12 @@ export const CELL_UNSET = "CELL_UNSET";
 
 export function charGraphReducer(state: readonly string[][], action: ReducerAction) {
 	const { type, data } = action;
-	let newState = [...state];
-
 	const {
 		coords: { x, y },
 		value,
 	} = data;
 
+	let newState = [...state];
 	switch (type) {
 		case CELL_SET:
 			if (!newState[y][x]) {

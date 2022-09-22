@@ -1,4 +1,4 @@
-import { useReducer, SyntheticEvent, FormEvent } from "react";
+import { useReducer, SyntheticEvent, FormEvent, KeyboardEventHandler } from "react";
 import "./game.css";
 import { Coordinates, Props } from "../../definitions/types";
 import { charGraphReducer, CELL_SET, CELL_UNSET } from "./char_graph_reducer";
@@ -29,30 +29,32 @@ export default function Game({ secretWord, attempts }: GameProps): JSX.Element {
 		coords: Coordinates
 	) => {
 		console.log(event);
-		/*
 		event.preventDefault();
 
-		const { target, stopPropagation } = event;
-		const { y, x } = coords;
+		const {
+			target: { key },
+			stopPropagation,
+		} = event;
 
-		switch (target.key) {
+		switch (key) {
+/*
             case "ArrowLeft":
                 stopPropagation();
                 const { nextSibling } = ref.current;
                 if (nextSibling) {
-                    nextSibling.focus();
+                    handleOnNavKeyDown(nextSibling)
                 }
                 // TODO: focus (idxX - 1) or preceding sibling
                 break;
                 
                 case "ArrowRight":
                     stopPropagation();
-                // const {prevSibling} = ref.current;
-                if (prevSibling) {
-                }
-                break;
-                
-
+                    // const {prevSibling} = ref.current;
+                    if (prevSibling) {
+                    }
+                    break;
+                    
+*/
 			case "Enter":
 				// TODO: submit form
 				break;
@@ -64,6 +66,7 @@ export default function Game({ secretWord, attempts }: GameProps): JSX.Element {
 				break;
 
 			default:
+                // default behavior is to commit keystroke to state and focus idxX + 1
 				stopPropagation();
 				if (/^Key[A-Za-z]{1}$/g.test(key)) {
 					// ensure keystroke is a letter
@@ -71,15 +74,15 @@ export default function Game({ secretWord, attempts }: GameProps): JSX.Element {
 				} else {
 					// box shake animation?
 				}
-            }
-            */
+		}
 	};
 
-	/*
-    //this fn will be needed if the form isn't handling arrow keys natively
-    //it will need to find an lmnt based on x,y and trigger it's ref's focus()
-	const handleOnNavKeyDown: KeyboardEventHandler = () => {};
-*/
+	/**
+	 * this fn will be needed if the form isn't handling arrow keys natively
+	 * it will need to find an lmnt based on x,y and trigger it's ref's focus()
+	 */
+	const handleOnNavKeyDown: KeyboardEventHandler = (): void => {};
+
 	const handleOnSubmit = (event: SyntheticEvent): void => {};
 
 	return (
